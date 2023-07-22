@@ -4,11 +4,68 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+function displayWindowSize(){
+
+    // Get width and height of the window excluding scrollbars
+    var w = document.documentElement.clientWidth;
+	var $inner = $('#sidebar_content'),
+		$open_sidebar = $('#open'),
+		$close_sidebar = $('#close');
+
+	if(w <= 1280){
+		document.getElementById("sidebar").classList.remove('open_sidebar');
+		document.getElementById("wrapper").classList.remove('open_wrapper');
+		document.getElementById("sidebar").classList.remove('close_sidebar');
+		document.getElementById("wrapper").classList.remove('close_wrapper');
+		$inner.show();
+	} else if(w > 1280 && 
+		document.getElementById('sidebar_content').style.display !== 'none' && 
+		document.getElementById('open').style.display !== 'none'){
+		$open_sidebar.hide();
+		$close_sidebar.show();
+	}  
+}
+
+window.addEventListener("resize", displayWindowSize);
+displayWindowSize();
+
 (function($) {
 
 	var	$window = $(window),
 		$body = $('body'),
-		$sidebar = $('#sidebar');
+		$sidebar = $('#sidebar'),
+		$inner = $('#sidebar_content'),
+
+		$open_sidebar = $('#open'),
+		$close_sidebar = $('#close')
+
+		$open_sidebar.hide()
+		$close_sidebar.show()
+    
+
+	$close_sidebar.click(function(){
+		document.getElementById("sidebar").classList.remove('open_sidebar');
+		document.getElementById("wrapper").classList.remove('open_wrapper');
+
+		document.getElementById("sidebar").classList.add('close_sidebar');
+		document.getElementById("wrapper").classList.add('close_wrapper');
+
+		$close_sidebar.hide();
+		$inner.hide();
+		$open_sidebar.show();
+	})
+
+	$open_sidebar.click(function(){
+		document.getElementById("sidebar").classList.remove('close_sidebar');
+		document.getElementById("wrapper").classList.remove('close_wrapper');
+
+		document.getElementById("sidebar").classList.add('open_sidebar');
+		document.getElementById("wrapper").classList.add('open_wrapper');
+
+		$open_sidebar.hide();
+		$inner.show();
+		$close_sidebar.show();
+	})
 
 	// Breakpoints.
 		breakpoints({
@@ -53,7 +110,39 @@
 				.addClass('scrolly')
 				.on('click', function() {
 
-					var $this = $(this);
+					var $this = $(this)
+						id = $this.attr('href'), 
+						$cur_section = $(id),
+						section_array = ['intro','one','two','three'];
+
+
+						if($cur_section[0].id == section_array[0]){
+							document.getElementById('one').classList.remove('style3');
+							document.getElementById('two').classList.remove('style3');
+							document.getElementById('three').classList.remove('style3');
+
+							document.getElementById('intro').classList.add('style3');
+						} else if($cur_section[0].id == section_array[1]){
+							document.getElementById('intro').classList.remove('style3');
+							document.getElementById('two').classList.remove('style3');
+							document.getElementById('three').classList.remove('style3');
+
+							document.getElementById('one').classList.add('style3');
+						} else if($cur_section[0].id == section_array[2]){
+							document.getElementById('intro').classList.remove('style3');
+							document.getElementById('one').classList.remove('style3');
+							document.getElementById('three').classList.remove('style3');
+
+							document.getElementById('two').classList.add('style3')
+						} else if($cur_section[0].id == section_array[3]){
+							document.getElementById('intro').classList.remove('style3');
+							document.getElementById('one').classList.remove('style3');
+							document.getElementById('two').classList.remove('style3');
+
+							document.getElementById('three').classList.add('style3')
+						} 
+
+
 
 					// External link? Bail.
 						if ($this.attr('href').charAt(0) != '#')
@@ -74,6 +163,7 @@
 						id = $this.attr('href'),
 						$section = $(id);
 
+
 					// No section for this link? Bail.
 						if ($section.length < 1)
 							return;
@@ -81,15 +171,47 @@
 					// Scrollex.
 						$section.scrollex({
 							mode: 'middle',
-							top: '-20vh',
-							bottom: '-20vh',
+							top: '',
+							bottom: '',
 							initialize: function() {
 
 								// Deactivate section.
 									$section.addClass('inactive');
+									
 
 							},
 							enter: function() {
+									var $cur_section = $(id);
+									var section_array = ['intro','one','two','three'];
+
+									if($cur_section[0].id == section_array[0]){
+										if(document.getElementById('one').classList.contains('style3')){
+											document.getElementById('one').classList.remove('style3');
+										}
+										document.getElementById('intro').classList.add('style3');
+									} else if($cur_section[0].id == section_array[1]){
+										if(document.getElementById('intro').classList.contains('style3')){
+											document.getElementById('intro').classList.remove('style3');
+										}
+										if(document.getElementById('two').classList.contains('style3')){
+											document.getElementById('two').classList.remove('style3');
+										}
+										document.getElementById('one').classList.add('style3');
+									} else if($cur_section[0].id == section_array[2]){
+										if(document.getElementById('one').classList.contains('style3')){
+											document.getElementById('one').classList.remove('style3');
+										}
+										if(document.getElementById('three').classList.contains('style3')){
+											document.getElementById('three').classList.remove('style3');
+										}
+										document.getElementById('two').classList.add('style3')
+									} else if($cur_section[0].id == section_array[3]){
+										if(document.getElementById('two').classList.contains('style3')){
+											document.getElementById('two').classList.remove('style3');
+										}
+										document.getElementById('three').classList.add('style3')
+									} 
+
 
 								// Activate section.
 									$section.removeClass('inactive');
@@ -105,6 +227,8 @@
 								// Otherwise, if this section's link is the one that's locked, unlock it.
 									else if ($this.hasClass('active-locked'))
 										$this.removeClass('active-locked');
+
+
 
 							}
 						});
