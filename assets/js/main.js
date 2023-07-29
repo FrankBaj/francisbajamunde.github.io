@@ -29,6 +29,41 @@ function displayWindowSize(){
 window.addEventListener("resize", displayWindowSize);
 displayWindowSize();
 
+// function logoHover(){
+// 	document.getElementById('html_logo').classList.add('translate_html_logo');
+// 	document.getElementById('css_logo').classList.add('translate_css_logo');
+// 	document.getElementById('js_logo').classList.add('translate_js_logo');
+// }
+
+// function logoLeave(){
+// 	document.getElementById('html_logo').classList.remove('translate_html_logo');
+// 	document.getElementById('css_logo').classList.remove('translate_css_logo');
+// 	document.getElementById('js_logo').classList.remove('translate_js_logo');
+// }
+
+const observer = new IntersectionObserver(entries => {
+	entries.forEach(entry => {
+		// If the element is visible
+		if (entry.isIntersecting) {
+		  // Add the animation class
+		  	if(entry.target.id == 'coding_text'){
+				entry.target.classList.add('text_animation');
+			}
+			if (entry.target.id == 'bug_text'){
+				entry.target.classList.add('text_animation');
+			}
+			if (entry.target.id == 'VC_text'){
+				entry.target.classList.add('text_animation');
+			}
+		}
+	  });
+  });
+  
+  // Tell the observer which elements to track
+  observer.observe(document.getElementById("coding_text"));
+  observer.observe(document.getElementById("bug_text"));
+  observer.observe(document.getElementById("VC_text"));
+
 (function($) {
 
 	var	$window = $(window),
@@ -41,6 +76,10 @@ displayWindowSize();
 
 		$open_sidebar.hide()
 		$close_sidebar.show()
+
+	$window.on('beforeunload', function() {
+		$window.scrollTop(0);
+	});
     
 
 	$close_sidebar.click(function(){
@@ -80,12 +119,43 @@ displayWindowSize();
 		if (browser.name == 'ie')
 			$body.addClass('is-ie');
 
-	// Play initial animations on page load.
+
+		$window.on('load', function(){
+			document.getElementById("sidebar").classList.remove('open_sidebar');
+			document.getElementById("wrapper").classList.remove('open_wrapper');
+
+			document.getElementById("sidebar").classList.add('close_sidebar');
+			document.getElementById("wrapper").classList.add('close_wrapper');
+
+			// $close_sidebar.hide();
+			$inner.hide();
+			// $open_sidebar.show();
+		})
+
+		// Play initial animations on page load.
 		$window.on('load', function() {
 			window.setTimeout(function() {
 				$body.removeClass('is-preload');
 			}, 100);
 		});
+
+		window.setTimeout(function(){
+			document.getElementById("intro_para").classList.add('shift_right_animation')
+		}, 4000)
+
+		window.setTimeout(function() {
+			document.getElementById("sidebar").classList.remove('close_sidebar');
+			document.getElementById("wrapper").classList.remove('close_wrapper');
+
+			document.getElementById("sidebar").classList.add('open_sidebar');
+			document.getElementById("wrapper").classList.add('open_wrapper');
+
+			$open_sidebar.hide();
+			$close_sidebar.show()
+			
+			$inner.show();
+			$body.removeClass('no_scroll_body');
+		}, 5500);
 
 	// Forms.
 
@@ -115,29 +185,47 @@ displayWindowSize();
 						$cur_section = $(id),
 						section_array = ['intro','one','two','three'];
 
+						/*UNCOMMENT IF ADDING PORTFOLIO SECTION*/
+						// if($cur_section[0].id == section_array[0]){
+						// 	document.getElementById('one').classList.remove('style3');
+						// 	document.getElementById('two').classList.remove('style3');
+						// 	document.getElementById('three').classList.remove('style3');
 
+						// 	document.getElementById('intro').classList.add('style3');
+						// } else if($cur_section[0].id == section_array[1]){
+						// 	document.getElementById('intro').classList.remove('style3');
+						// 	document.getElementById('two').classList.remove('style3');
+						// 	document.getElementById('three').classList.remove('style3');
+
+						// 	document.getElementById('one').classList.add('style3');
+						// } else if($cur_section[0].id == section_array[2]){
+						// 	document.getElementById('intro').classList.remove('style3');
+						// 	document.getElementById('one').classList.remove('style3');
+						// 	document.getElementById('three').classList.remove('style3');
+
+						// 	document.getElementById('two').classList.add('style3')
+						// } else if($cur_section[0].id == section_array[3]){
+						// 	document.getElementById('intro').classList.remove('style3');
+						// 	document.getElementById('one').classList.remove('style3');
+						// 	document.getElementById('two').classList.remove('style3');
+
+						// 	document.getElementById('three').classList.add('style3')
+						// } 
+
+						// GET RID OF THIS IF ADDING PORTFOLIO SECTION
 						if($cur_section[0].id == section_array[0]){
 							document.getElementById('one').classList.remove('style3');
-							document.getElementById('two').classList.remove('style3');
 							document.getElementById('three').classList.remove('style3');
 
 							document.getElementById('intro').classList.add('style3');
 						} else if($cur_section[0].id == section_array[1]){
 							document.getElementById('intro').classList.remove('style3');
-							document.getElementById('two').classList.remove('style3');
 							document.getElementById('three').classList.remove('style3');
 
 							document.getElementById('one').classList.add('style3');
-						} else if($cur_section[0].id == section_array[2]){
-							document.getElementById('intro').classList.remove('style3');
-							document.getElementById('one').classList.remove('style3');
-							document.getElementById('three').classList.remove('style3');
-
-							document.getElementById('two').classList.add('style3')
 						} else if($cur_section[0].id == section_array[3]){
 							document.getElementById('intro').classList.remove('style3');
 							document.getElementById('one').classList.remove('style3');
-							document.getElementById('two').classList.remove('style3');
 
 							document.getElementById('three').classList.add('style3')
 						} 
@@ -184,6 +272,36 @@ displayWindowSize();
 									var $cur_section = $(id);
 									var section_array = ['intro','one','two','three'];
 
+									/*UNCOMMENT IF ADDING PORTFOLIO SECTION*/
+									// if($cur_section[0].id == section_array[0]){
+									// 	if(document.getElementById('one').classList.contains('style3')){
+									// 		document.getElementById('one').classList.remove('style3');
+									// 	}
+									// 	document.getElementById('intro').classList.add('style3');
+									// } else if($cur_section[0].id == section_array[1]){
+									// 	if(document.getElementById('intro').classList.contains('style3')){
+									// 		document.getElementById('intro').classList.remove('style3');
+									// 	}
+									// 	if(document.getElementById('two').classList.contains('style3')){
+									// 		document.getElementById('two').classList.remove('style3');
+									// 	}
+									// 	document.getElementById('one').classList.add('style3');
+									// } else if($cur_section[0].id == section_array[2]){
+									// 	if(document.getElementById('one').classList.contains('style3')){
+									// 		document.getElementById('one').classList.remove('style3');
+									// 	}
+									// 	if(document.getElementById('three').classList.contains('style3')){
+									// 		document.getElementById('three').classList.remove('style3');
+									// 	}
+									// 	document.getElementById('two').classList.add('style3')
+									// } else if($cur_section[0].id == section_array[3]){
+									// 	if(document.getElementById('two').classList.contains('style3')){
+									// 		document.getElementById('two').classList.remove('style3');
+									// 	}
+									// 	document.getElementById('three').classList.add('style3')
+									// } 
+
+									// GET RID OF THIS IF ADDING PORTFOLIO SECTION
 									if($cur_section[0].id == section_array[0]){
 										if(document.getElementById('one').classList.contains('style3')){
 											document.getElementById('one').classList.remove('style3');
@@ -193,21 +311,13 @@ displayWindowSize();
 										if(document.getElementById('intro').classList.contains('style3')){
 											document.getElementById('intro').classList.remove('style3');
 										}
-										if(document.getElementById('two').classList.contains('style3')){
-											document.getElementById('two').classList.remove('style3');
-										}
-										document.getElementById('one').classList.add('style3');
-									} else if($cur_section[0].id == section_array[2]){
-										if(document.getElementById('one').classList.contains('style3')){
-											document.getElementById('one').classList.remove('style3');
-										}
 										if(document.getElementById('three').classList.contains('style3')){
 											document.getElementById('three').classList.remove('style3');
 										}
-										document.getElementById('two').classList.add('style3')
+										document.getElementById('one').classList.add('style3');
 									} else if($cur_section[0].id == section_array[3]){
-										if(document.getElementById('two').classList.contains('style3')){
-											document.getElementById('two').classList.remove('style3');
+										if(document.getElementById('one').classList.contains('style3')){
+											document.getElementById('one').classList.remove('style3');
 										}
 										document.getElementById('three').classList.add('style3')
 									} 
