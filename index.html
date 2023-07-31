@@ -6,23 +6,27 @@
 -->
 <html>
 	<head>
-		<title>Hyperspace by HTML5 UP</title>
+		<title>Francis Bajamunde</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	<body class="is-preload">
-
+	<body class="is-preload no_scroll_body">
 		<!-- Sidebar -->
 			<section id="sidebar">
-				<div class="inner">
+				<div id="close_arrow">
+					<i id="close" class="arrow left"></i>
+				</div>
+				<!-- <img src="images/fb_Logo_Glitch2.svg"> -->
+				<div id="sidebar_content" class="inner">
 					<nav>
 						<ul>
 							<li><a href="#intro">Welcome</a></li>
-							<li><a href="#one">Who we are</a></li>
-							<li><a href="#two">What we do</a></li>
-							<li><a href="#three">Get in touch</a></li>
+							<li><a href="#one">Skillset</a></li>
+							<!-- Remember to add the href back if adding portfolio section -->
+							<!-- <li class="hide"><a href="#two">Portfolio</a></li>  -->
+							<li><a href="#three">Contact</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -30,34 +34,133 @@
 
 		<!-- Wrapper -->
 			<div id="wrapper">
-
-				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
+				<!-- <div id="result"></div> -->
+				<!-- <i id="open" class="test arrow right"></i> -->
+				<span class="test">
+					<i id="open" class="arrow right"></i>
+				</span>
+				<!-- Intro style1-->
+					<section id="intro" class="wrapper fullscreen fade-up welcome_padding">
 						<div class="inner">
-							<h1>Hyperspace</h1>
-							<p>Just another fine responsive site template designed by <a href="http://html5up.net">HTML5 UP</a><br />
-							and released for free under the <a href="http://html5up.net/license">Creative Commons</a>.</p>
-							<ul class="actions">
+							<h1>
+								<!-- Welcome -->
+								<ul class="list_container">
+									<li id="elem1" style="text-align: center;">
+										Hello!
+									</li>
+									<li id="elem2" style="text-align: center;">
+										My name is,
+									</li>
+									<li id="elem3" style="text-align: center;">
+										Francis Bajamunde
+									</li>
+								</ul>
+							</h1>
+							<!-- <p>Brief paragraph describing who I am, and my skillset.</p> -->
+							<!-- <ul class="actions">
 								<li><a href="#one" class="button scrolly">Learn more</a></li>
-							</ul>
+							</ul> -->
+						</div>
+						<div class="intro_spacing">
+							<p id="intro_para">Brief paragraph describing who I am, <br> and my skillset.</p>
+						</div>
+					</section>
+				
+					<!-- One style3-->
+					<section id="one" class="wrapper fade-up">
+						<div class="inner">
+							<h2 style="margin-bottom: 2em;">Skillset</h2>
+							<!-- <p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p> -->
+							<div class="features">
+								<div class="skillset_section">
+									<img id="coding_img" src="images/Coding.svg" alt="Coding">
+									<p id="coding_text" class="skillset_text">Phasellus convallis elit id ullamcorper pulvinar. 
+										Duis aliquam turpis mauris, eu ultricies erat malesuada quis. 
+										Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+								</div>
+								<div class="skillset_section">
+									<img id="bug_img" src="images/Bug_Fixes_Wrench.svg" alt="Bug Fixes">
+									<p id="bug_text" class="skillset_text">Phasellus convallis elit id ullamcorper pulvinar. 
+										Duis aliquam turpis mauris, eu ultricies erat malesuada quis. 
+										Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+								</div>
+								<div class="skillset_section">
+									<img id="VC_img" src="images/Version_control.svg" alt="Folders">
+									<p id="VC_text" class="skillset_text">Phasellus convallis elit id ullamcorper pulvinar. 
+										Duis aliquam turpis mauris, eu ultricies erat malesuada quis. 
+										Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+								</div>
+								<!-- <section>
+									<img src="images/HTML5_Logo.svg">
+								</section>
+								<section>
+									<img src="images/CSS3_Logo.svg">
+								</section>
+								<section>
+									<img src="images/Javascript_Logo.svg">
+								</section> -->
+								<!-- <section>
+									<span class="icon solid major fa-code"></span>
+									<h3>Lorem ipsum amet</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-lock"></span>
+									<h3>Aliquam sed nullam</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-cog"></span>
+									<h3>Sed erat ullam corper</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section> -->
+								<!-- <section>
+									<span class="icon solid major fa-desktop"></span>
+									<h3>Veroeros quis lorem</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-link"></span>
+									<h3>Urna quis bibendum</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon major fa-gem"></span>
+									<h3>Aliquam urna dapibus</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section> -->
+							</div>
+							<!-- <ul class="actions">
+								<li><a href="generic.html" class="button">Learn more</a></li>
+							</ul> -->
 						</div>
 					</section>
 
-				<!-- One -->
-					<section id="one" class="wrapper style2 spotlights">
+				<!-- Two style2-->
+					<section id="two" class="wrapper spotlights hide">
 						<section>
+							<div class="content">
+								<div class="inner">
+									<h2 class="font_style2">Portfolio</h2>
+								</div>
+							</div>
+						</section>
+						<section style="padding-left: 4em;">
 							<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
 							<div class="content">
 								<div class="inner">
-									<h2>Sed ipsum dolor</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
+									<h2 class="font_style2">Sed ipsum dolor</h2>
+									<p class="font_style2">Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
 									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
+										<li><a href="#" class="button_style1">Learn more</a></li>
 									</ul>
 								</div>
 							</div>
 						</section>
-						<section>
+						<section id="change_height">
+
+						</section>
+						<!-- <section>
 							<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
 							<div class="content">
 								<div class="inner">
@@ -80,59 +183,16 @@
 									</ul>
 								</div>
 							</div>
-						</section>
+						</section> -->
 					</section>
 
-				<!-- Two -->
-					<section id="two" class="wrapper style3 fade-up">
+				<!-- Three style3-->
+					<section id="three" class="wrapper fade-up">
 						<div class="inner">
-							<h2>What we do</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-							<div class="features">
-								<section>
-									<span class="icon solid major fa-code"></span>
-									<h3>Lorem ipsum amet</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-lock"></span>
-									<h3>Aliquam sed nullam</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-cog"></span>
-									<h3>Sed erat ullam corper</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-desktop"></span>
-									<h3>Veroeros quis lorem</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-link"></span>
-									<h3>Urna quis bibendum</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon major fa-gem"></span>
-									<h3>Aliquam urna dapibus</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-							</div>
-							<ul class="actions">
-								<li><a href="generic.html" class="button">Learn more</a></li>
-							</ul>
-						</div>
-					</section>
-
-				<!-- Three -->
-					<section id="three" class="wrapper style1 fade-up">
-						<div class="inner">
-							<h2>Get in touch</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-							<div class="split style1">
-								<section>
+							<h2 class="font_style2">Get in touch</h2>
+							<p class="font_style2">Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+							<div class="split">
+								<!-- <section>
 									<form method="post" action="#">
 										<div class="fields">
 											<div class="field half">
@@ -152,34 +212,76 @@
 											<li><a href="" class="button submit">Send Message</a></li>
 										</ul>
 									</form>
-								</section>
+								</section> -->
 								<section>
-									<ul class="contact">
-										<li>
-											<h3>Address</h3>
+									<ul class="contact font_style2">
+										<!-- <li>
+											<h3 class="font_style2">Address</h3>
 											<span>12345 Somewhere Road #654<br />
 											Nashville, TN 00000-0000<br />
 											USA</span>
-										</li>
+										</li> -->
 										<li>
-											<h3>Email</h3>
+											<h3 class="font_style2">Email</h3>
 											<a href="#">user@untitled.tld</a>
 										</li>
-										<li>
-											<h3>Phone</h3>
+										<!-- <li>
+											<h3 class="font_style2">Phone</h3>
 											<span>(000) 000-0000</span>
-										</li>
+										</li> -->
 										<li>
-											<h3>Social</h3>
+											<h3 class="font_style2">Social</h3>
 											<ul class="icons">
-												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+												<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
+												<!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
 												<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+												<!-- <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li> -->
 												<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
 											</ul>
 										</li>
+										<li>
+											<h3 class="font_style2">Resumè</h3>
+											<a id="resume" href="" download="">
+												<!-- <img class="resume" src="images/Resume_big.svg" alt=""> -->
+												<svg 
+													width="25px" 
+													viewBox="0 0 283 366" 
+													version="1.1" 
+													xmlns="http://www.w3.org/2000/svg" 
+													xmlns:xlink="http://www.w3.org/1999/xlink" 
+													xml:space="preserve" 
+													xmlns:serif="http://www.serif.com/" 
+													style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+													<g>
+														<g>
+															<path 
+															d="M280.564,94.571l-69.572,-92.295l-139.144,-0c-38.398,-0 -69.572,31.174 -69.572,69.572l-0,221.842c-0,38.398 31.174,69.572 69.572,69.572l139.144,0c38.398,0 69.572,-31.174 69.572,-69.572l-0,-199.119Z" 
+															style="fill:#101010;stroke-width:4.55px;"/>
+															<path d="M280.564,94.867c1.428,-10.782 -69.939,-102.685 -69.939,-91.548c0,0 0.857,27.967 1.369,44.681c0.279,9.091 3.253,17.894 8.547,25.29c5.098,7.122 10.518,11.301 22.414,14.098l37.609,7.479Z" 
+															style="fill:#101010;stroke-width:4.55px;"/>
+														</g>
+														<g>
+															<path d="M42.504,301.498l145.657,-0" style="fill:none;stroke-width:12.48px;"/>
+															<path d="M42.504,269.205l109.441,-0" style="fill:none;stroke-width:12.48px;"/>
+															<path d="M42.504,166.911l206.028,0" style="fill:none;stroke-width:12.48px;"/>
+															<path d="M112.879,201.511l135.653,-0" style="fill:none;stroke-width:12.48px;"/>
+															<path d="M194.378,236.792l54.154,0" style="fill:none;stroke-width:12.48px;"/>
+															<path d="M124.868,236.792l54.154,0" style="fill:none;stroke-width:12.48px;"/>
+															<path d="M42.504,201.511l54.153,-0" style="fill:none;stroke-width:12.48px;"/>
+															<path d="M42.504,236.792l68.259,0" style="fill:none;stroke-width:12.48px;"/>
+															<path d="M202.97,301.798l45.562,-0" style="fill:none;stroke-width:12.48px;"/>
+															<path d="M166.986,269.205l81.546,-0" style="fill:none;stroke-width:12.48px;"/>
+															<path d="M126.965,59.243c0,-11.654 -9.461,-21.116 -21.115,-21.116l-42.231,0c-11.654,0 -21.115,9.462 -21.115,21.116l-0,44.218c-0,11.654 9.461,21.116 21.115,21.116l42.231,-0c11.654,-0 21.115,-9.462 21.115,-21.116l0,-44.218Z" 
+																	style="stroke-width:0.97px;"/>
+														</g>
+													</g>
+												</svg>
+											</a>
+										</li>
 									</ul>
+								</section>
+								<section style="margin: auto;">
+									<img src="images/Dialogue_Boxes.svg" alt="Dialogue_Boxes">
 								</section>
 							</div>
 						</div>
@@ -187,11 +289,11 @@
 
 			</div>
 
-		<!-- Footer -->
-			<footer id="footer" class="wrapper style1-alt">
+		<!-- Footer style1-->
+			<footer id="footer" class="wrapper">
 				<div class="inner">
 					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<!-- <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li> -->
 					</ul>
 				</div>
 			</footer>
