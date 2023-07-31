@@ -71,9 +71,9 @@ function displayWindowSize(){
 		}
 	}
 
-	if(w > 736){
+	if(w > 980){
 		$('#intro').addClass('stop-transition');
-	} else if (w <= 736){
+	} else if (w <= 980){
 		if($('#intro').hasClass('stop-transition')){
 			$('.wrapper.fullscreen').css({'padding':'13em 0'})
 		}
