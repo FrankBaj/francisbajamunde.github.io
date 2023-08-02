@@ -3334,7 +3334,8 @@ input, select, textarea {
 
 				.wrapper.fullscreen {
 					/* padding: 2em 0; */
-					padding: 25em 0;
+					padding: 20em 0;
+					margin-bottom: 10em;
 					animation-name: smallscreen-padding-shift;
 					animation-delay: 5s;
 					animation-duration: 1s;
@@ -4475,37 +4476,45 @@ input, select, textarea {
 
 @-webkit-keyframes smallscreen-padding-shift {
 	0% 	{
-			padding: 25em 0;
-		}
+		padding: 20em 0;
+		margin-bottom: 10em;
+	}
 	100%{
-			padding: 13em 0;
-		}
+		padding: 13em 0;
+		margin-bottom: 0em;
+	}
 }
 
 @-o-keyframes smallscreen-padding-shift {
 	0% 	{
-			padding: 25em 0;
-		}
+		padding: 20em 0;
+		margin-bottom: 10em;
+	}
 	100%{
-			padding: 13em 0;
-		}
+		padding: 13em 0;
+		margin-bottom: 0em;
+	}
 }
 
 @-moz-keyframes smallscreen-padding-shift {
 	0% 	{
-			padding: 25em 0;
-		}
+		padding: 20em 0;
+		margin-bottom: 10em;
+	}
 	100%{
-			padding: 13em 0;
-		}
+		padding: 13em 0;
+		margin-bottom: 0em;
+	}
 }
 
 @keyframes smallscreen-padding-shift{
 	0% 	{
-			padding: 25em 0;
+			padding: 20em 0;
+			margin-bottom: 10em;
 		}
 	100%{
 			padding: 13em 0;
+			margin-bottom: 0em;
 		}
 }
 
